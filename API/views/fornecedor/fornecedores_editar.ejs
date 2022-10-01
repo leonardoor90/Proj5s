@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title> Editar Fornecedores</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/estilos/estilos.css">                                                                                                      
+    </head>
+    <body>
+        <header>
+            <nav id="menuPrincipal">
+                <ul>
+                    <li><a href="/">Início</a></li>
+                    <li><a href="/fornecedores">Voltar</a></li>
+                    <li><a href="/fornecedores/novo">Novo Fornecedor</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <br><br>
+
+        <div id="container" class="col-md-8">
+            <div>
+                <h1>Cadastrar Novo Fornecedor</h1>
+                <form action="/fornecedores/salvar" method="post"> 
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Código</label>
+                    <input type="text" name="for_codigo" value="<%= fornecedores[0].for_codigo %>" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">CNPJ</label>
+                    <input type="text" name="for_cnpj" value="<%= fornecedores[0].for_cnpj %>" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Razão Social</label>
+                    <input type="text" class="form-control" name="for_nome" value="<%= fornecedores[0].for_nome %>">
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-2">
+                        <label for="exampleFormControlSelect1">CEP</label>
+                        <input type="text" class="form-control" name="for_cep" value="<%= fornecedores[0].for_cep %>">
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="exampleFormControlSelect1">Logradouro</label>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="exampleFormControlSelect1">Número</label>
+                        <input type="text" class="form-control" name="for_nro" value="<%= fornecedores[0].for_nro %>">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-5">
+                        <label for="exampleFormControlSelect1">Bairro</label>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="exampleFormControlSelect1">Cidade</label>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+                    <div class="form-group col-md-1">
+                        <label for="exampleFormControlSelect1">UF</label>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+                </div>
+                
+                
+                <div class="row">
+                    <div class="col-md-3">
+                        <button type="submit" class="btn btn-primary btn-block">Salvar </button>                    
+                    </div>
+                    <div class="col-md-3">
+                        <a class="btn btn-danger btn-block" href="/fornecedores/listar">Voltar</a>
+                    </div>
+                </div>
+                
+                </form>
+            </div>
+        </div>
+
+        <footer>
+            <h6> Copyright 2019-1 © | Programação Script - FatecFranca </h6>
+        </footer>
+
+        <!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+        <script src="js/bootstrap.min.js"></script>        
+    </body>
+</html>
